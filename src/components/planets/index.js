@@ -1,5 +1,6 @@
 import React, {Fragment, useState, useEffect} from 'react';
 import Planet from './planet';
+import Form from './form';
 
 /*const showMessage = () => {
     console.log("Meu primeiro evento");
@@ -41,9 +42,18 @@ const Planets = () => {
         setPlanets([...planets, last_planets]);
 
     }
+
+    const addPlanet = (new_planet) => {
+        setPlanets([...planets, new_planet])
+    }
+
     return (
         <Fragment>
             <h3>Planet List</h3>
+            <hr/>
+            <Form addPlanet={addPlanet} />
+            <hr/>
+
             <button onClick={removeLast}>Remove Last</button>
             <button onClick={duplicateLastPlanet}>Duplicate Last</button>
             <hr />
